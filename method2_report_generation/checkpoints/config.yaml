@@ -1,0 +1,46 @@
+df: '' #followed by train2014/
+
+# set pretrained as a file path or an url
+pretrained: 
+  https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_vqa_capfilt_large.pth
+# pretrained: '/home/danli/caption/BLIP/output/pretrain_0420/checkpoint_00.pth'
+# pretrained: '/home/danli/caption/BLIP/output/fundus/06-02-1753/checkpoint_00.pth'
+
+# size of vit model; base or large
+vit: base
+batch_size_train: 4
+batch_size_test: 4
+vit_grad_ckpt: false
+vit_ckpt_layer: 0
+init_lr: 2e-5
+#init_lr: 2e-4
+image_size: 320 #480
+# image_size: 224
+
+# question
+# max_q_length: 150
+max_q_length: 5
+
+# answer
+# k_test: 128
+# inference: 'rank'
+inference: generate
+max_length: 300 #329 #150
+min_length: 1
+num_beams: 1
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 50
+
+Q: Q
+impath: impath
+ANS: ANS
+eid: orgid
+test_size: .3  # 
+dataset: fa_multi
+# language: 'en'
+language: multi
+max_img_num: 9
+output_dir: /home/danli/caption/BLIP/output/fa_multi/11-04-1307
+sp: ''
